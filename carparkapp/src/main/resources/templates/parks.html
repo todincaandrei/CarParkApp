@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Parks</title>
+</head>
+<body>
+
+<h2>Parks:</h2>
+<ul>
+    <li th:each="park: ${parks}">
+
+        <p th:text="${park.id} + ' ' +${park.name}+ ' ' +${park.city}+ ' ' +${park.address}"> </p>
+
+
+    </li>
+
+</ul>
+
+
+</body>
+</html>
