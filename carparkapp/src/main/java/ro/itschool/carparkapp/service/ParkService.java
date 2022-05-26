@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class ParkService {
 
-//    add get delete
+
 
     @Autowired
     private ParkRepository parkRepository;

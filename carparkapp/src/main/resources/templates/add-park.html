@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Park</title>
+</head>
+<body>
+
+<h2>Add Department</h2>
+
+<form method="post" th:action="@{/add-new-park}" th:object="${park}">
+
+    <label for="id">Id:</label><br>
+    <input type="text" id="id" name="id" th:field="*{id}"><br>
+
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" th:field="*{name}"><br>
+
+    <label for="city">City:</label><br>
+    <input type="text" id="city" name="city" th:field="*{city}"><br>
+
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address" th:field="*{address}"><br>
+
+    <br><br>
+    <input type="submit" value="Submit">
+
+
+
+</form>
+
+
+
+</body>
+</html>
