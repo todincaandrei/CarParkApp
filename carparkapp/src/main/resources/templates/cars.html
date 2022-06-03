@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>Parks</title>
+    <title>Cars</title>
 </head>
 <body>
 
@@ -30,13 +30,13 @@
 
 <div class="container">
 
-    <a class="btn btn-outline-primary" href="/add-park">Add Park</a>
+    <a class="btn btn-outline-primary" href="/add-car">Add Car</a>
     <ul>
         <li th:each="park: ${parks}">
 
-            <p th:text="${park.id} + ' ' +${park.name}+ ' ' +${park.city}+ ' ' +${park.address}"> </p>
-           <a th:href="@{edit-parks-page/{id}(id = ${park.id})}" class="btn btn-primary" >Edit</a>
-           <a th:href="@{delete-park/{id}(id = ${park.id})}" class="btn btn-primary" >Delete</a>
+            <p th:text="${car.id} + ' ' +${car.brand}+ ' ' +${car.colour}+ ' ' +${car.transmission}+ ' ' +${car.yearOfFabrication}"> </p>
+<!--           <a th:href="@{edit-parks-page/{id}(id = ${park.id})}" class="btn btn-primary" >Edit</a>-->
+<!--           <a th:href="@{delete-park/{id}(id = ${park.id})}" class="btn btn-primary" >Delete</a>-->
 
         </li>
 

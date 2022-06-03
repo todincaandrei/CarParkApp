@@ -8,7 +8,7 @@ public class CarModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int CarId;
+    private int id;
 
     private String brand;
 
@@ -37,12 +37,12 @@ public class CarModel {
         this.yearOfFabrication = yearOfFabrication;
     }
 
-    public int getCarId() {
-        return CarId;
+    public int getId() {
+        return id;
     }
 
-    public void setCarId(int carId) {
-        CarId = carId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getBrand() {
