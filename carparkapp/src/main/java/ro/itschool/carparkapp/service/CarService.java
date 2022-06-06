@@ -51,4 +51,9 @@ public class CarService {
 
     public void removeCar(int carId) {carRepository.deleteById(carId);
     }
+
+
+    public List<CarModel> searchByModel(String carModel){
+        return carRepository.searchByModel(carModel);
+    }
 }

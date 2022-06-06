@@ -10,7 +10,7 @@
 <body>
 
 
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="view-parks">Parks</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -35,7 +35,7 @@
     <form method="post" th:action="@{/add-new-park}" th:object="${park}">
 
         <label for="id">Id:</label><br>
-        <input type="text" id="id" name="id" th:field="*{id}"><br>
+        <input type="number" id="id" name="id" th:field="*{id}"><br>
 
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" th:field="*{name}"><br>
@@ -45,6 +45,8 @@
 
         <label for="address">Address:</label><br>
         <input type="text" id="address" name="address" th:field="*{address}"><br>
+
+
 
         <br><br>
         <input type="submit" value="Submit">

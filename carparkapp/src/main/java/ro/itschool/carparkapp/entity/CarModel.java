@@ -25,6 +25,14 @@ public class CarModel {
     @ManyToOne
     private ParkModel park;
 
+    public ParkModel getPark() {
+        return park;
+    }
+
+    public void setPark(ParkModel park) {
+        this.park = park;
+    }
+
     public void setTransmission(String transmission) {
         this.transmission = transmission;
     }

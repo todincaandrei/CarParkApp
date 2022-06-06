@@ -10,9 +10,9 @@
 <body>
 
 
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="view-parks">Parks</a>
+        <a class="navbar-brand" href="/view-parks">Parks</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Cars</a>
+                    <a class="nav-link active" aria-current="page" href="/view-cars">Cars</a>
                 </li>
             </ul>
         </div>
@@ -35,7 +35,7 @@
     <form method="post" th:action="@{/add-new-park}" th:object="${park}">
 
         <label for="id">Id:</label><br>
-        <input type="text" id="id" name="id" th:field="*{id}"><br>
+        <input type="number" id="id" name="id" th:field="*{id}"><br>
 
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" th:field="*{name}"><br>
