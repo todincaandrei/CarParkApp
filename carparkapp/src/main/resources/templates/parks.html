@@ -10,18 +10,22 @@
 <body>
 
 
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="view-parks">Parks</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="home">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page"  href="view-cars">Cars</a>
+                    <a class="nav-link" href="view-parks">Parks</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="view-cars">Cars</a>
+                </li>
+
             </ul>
         </div>
     </div>
@@ -34,17 +38,16 @@
     <ul>
         <li th:each="park: ${parks}">
 
-            <p th:text="${park.id} + ' ' +${park.name}+ ' ' +${park.city}+ ' ' +${park.address}"> </p>
-           <a th:href="@{edit-parks-page/{id}(id = ${park.id})}" class="btn btn-primary" >Edit</a>
-           <a th:href="@{delete-park/{id}(id = ${park.id})}" class="btn btn-primary" >Delete</a>
+            <p th:text="${park.id} + ' ' +${park.name}+ ' ' +${park.city}+ ' ' +${park.address}"></p>
+            <a th:href="@{edit-parks-page/{id}(id = ${park.id})}" class="btn btn-primary">Edit</a>
+            <a th:href="@{delete-park/{id}(id = ${park.id})}" class="btn btn-primary">Delete</a>
+<!--            <a th:href="@{list-park/{id}(id = ${park.id})}" class="btn btn-primary">View available Cars</a>-->
 
         </li>
 
     </ul>
 
 </div>
-
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

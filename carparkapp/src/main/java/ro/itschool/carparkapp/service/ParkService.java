@@ -3,6 +3,7 @@ package ro.itschool.carparkapp.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import ro.itschool.carparkapp.entity.CarModel;
 import ro.itschool.carparkapp.entity.ParkModel;
 import ro.itschool.carparkapp.repository.ParkRepository;
 import ro.itschool.carparkapp.service.exception.ParkNotFoundException;
@@ -54,5 +55,9 @@ public class ParkService {
         existingPark.setAddress(updatedPark.getAddress());
         parkRepository.save(existingPark);
     }
+
+//    public List<CarModel> listCarsByParkId(int parkId){
+//        return parkRepository.listByParkId(parkId);
+//    }
 }
 

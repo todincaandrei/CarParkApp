@@ -1,0 +1,11 @@
+Proiect de management parcuri auto
+
+- pun la masini din ce park face parte
+- buton list la parcuri pentru a vedea toate masinile
+- search la masini dupa fiecare caracteristica
+- buton de home
+- pagina de start pentru a alege Park sau Cars
+- pentru transmisie boolean sa se poate alege dintre manuala sau automata
+- imagine de background
+- delete la parcuri , nu se pot sterge pentru ca sunt masini bagate in ele, rezolvare ce se face cu masinile, se sterg si ele, se muta?
+- 

@@ -87,4 +87,9 @@ public class CarController {
             model.addAttribute("cars", list);}
         return "cars";
     }
+
+    @GetMapping("home")
+    public String home(){
+        return "index";
+    }
 }

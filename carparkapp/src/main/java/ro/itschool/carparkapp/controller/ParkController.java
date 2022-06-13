@@ -20,6 +20,9 @@ public class ParkController {
     @Autowired
     private ParkService parkService;
 
+    @Autowired
+    private CarService carService;
+
 
 
     @GetMapping("view-parks")
@@ -70,4 +73,14 @@ public class ParkController {
         parkService.removePark(parkId);
         return "redirect:/view-parks";
     }
+
+
+//    @GetMapping("list-park/{id}")
+//    public String listByParkId( @PathVariable("id") int parkId,CarModel carModel, Model model) {
+//
+//            List<CarModel> list = parkService.listCarsByParkId(parkId);
+//            model.addAttribute("cars", list);
+//
+//        return "parks";
+//    }
 }

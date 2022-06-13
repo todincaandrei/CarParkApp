@@ -23,6 +23,7 @@ public class CarModel {
     }
 
     @ManyToOne
+    @JoinColumn(name="park_id")
     private ParkModel park;
 
     public ParkModel getPark() {
@@ -76,5 +77,6 @@ public class CarModel {
     public void setColour(String colour) {
         this.colour = colour;
     }
+
 
 }
