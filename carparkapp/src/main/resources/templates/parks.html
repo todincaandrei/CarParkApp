@@ -41,7 +41,6 @@
             <p th:text="${park.id} + ' ' +${park.name}+ ' ' +${park.city}+ ' ' +${park.address}"></p>
             <a th:href="@{edit-parks-page/{id}(id = ${park.id})}" class="btn btn-primary">Edit</a>
             <a th:href="@{delete-park/{id}(id = ${park.id})}" class="btn btn-primary">Delete</a>
-<!--            <a th:href="@{list-park/{id}(id = ${park.id})}" class="btn btn-primary">View available Cars</a>-->
 
         </li>
 

@@ -58,16 +58,13 @@
 
 
         <label for="parks">Choose a park:</label>
-        <select  name="parks" id="parks" th:field="*{park.id}">
+        <select name="parks" id="parks" th:field="*{park.id}">
 
             <option th:each="park:${parks} " th:value="${park.id}" th:text="${park.name}"></option>
-
         </select>
-
 
         <br><br>
         <input type="submit" value="Add">
-
 
     </form>
 

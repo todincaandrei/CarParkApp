@@ -16,20 +16,19 @@ public class CarService {
     @Autowired
     private CarRepository carRepository;
 
-
-
-    public List<CarModel> getCar(){
+    public List<CarModel> getCar() {
         List<CarModel> models = carRepository.findAll();
         return models;
     }
 
-    public void addCar(CarModel carModel) {carRepository.save(carModel);
+    public void addCar(CarModel carModel) {
+        carRepository.save(carModel);
     }
 
     public CarModel getCarById(int carId) throws CarNotFoundException {
         Optional<CarModel> optionalCarModel = carRepository.findById(carId);
 
-        if (optionalCarModel.isEmpty()){
+        if (optionalCarModel.isEmpty()) {
             throw new CarNotFoundException("Car with id: " + carId + " does not exists");
         }
         CarModel carModel = optionalCarModel.get();
@@ -37,7 +36,7 @@ public class CarService {
         return carModel;
     }
 
-    public void updateCar(CarModel modifiedCar) throws CarNotFoundException{
+    public void updateCar(CarModel modifiedCar) throws CarNotFoundException {
         CarModel existingCar = getCarById(modifiedCar.getId());
 
         existingCar.setBrand(modifiedCar.getBrand());
@@ -49,11 +48,11 @@ public class CarService {
         carRepository.save(existingCar);
     }
 
-    public void removeCar(int carId) {carRepository.deleteById(carId);
+    public void removeCar(int carId) {
+        carRepository.deleteById(carId);
     }
 
-
-    public List<CarModel> searchByModel(String carModel){
+    public List<CarModel> searchByModel(String carModel) {
         return carRepository.searchByModel(carModel);
     }
 }

@@ -31,12 +31,10 @@ public class CarController {
         return "cars";
     }
 
-
     @GetMapping("add-car")
     public String addCar(Model model) {
 
         List<ParkModel> parks = parkService.getPark();
-
 
         model.addAttribute("car", new CarModel());
         model.addAttribute("parks", parks);
@@ -49,7 +47,6 @@ public class CarController {
         carService.addCar(car);
         return "redirect:/view-cars";
     }
-
 
     @GetMapping("edit-car-page/{carId}")
     public String editCarPage(@PathVariable("carId") int carId, Model model) throws CarNotFoundException {
@@ -75,7 +72,6 @@ public class CarController {
         carService.removeCar(carId);
         return "redirect:/view-cars";
     }
-
 
     @RequestMapping(path = {"/","/search"})
     public String searchByModel(CarModel carModel, Model model, String keyword) {

@@ -14,38 +14,30 @@ import java.util.Optional;
 @Service
 public class ParkService {
 
-
-
     @Autowired
     private ParkRepository parkRepository;
 
-    public void addPark(ParkModel parkModel){
+    public void addPark(ParkModel parkModel) {
         parkRepository.save(parkModel);
     }
-
-
-
 
     public void removePark(int ParkId) {
         parkRepository.deleteById(ParkId);
     }
 
-
     public List<ParkModel> getPark() {
         return parkRepository.findAll();
-
     }
 
     public ParkModel getParkById(int parkId) throws ParkNotFoundException {
         Optional<ParkModel> optionalParkModel = parkRepository.findById(parkId);
-        if(optionalParkModel.isEmpty()){
-            throw new ParkNotFoundException("Park with id:" +  parkId + "does not exist");
+        if (optionalParkModel.isEmpty()) {
+            throw new ParkNotFoundException("Park with id:" + parkId + "does not exist");
         }
         ParkModel parkModel = optionalParkModel.get();
 
         return parkModel;
     }
-
 
     public void updateParks(ParkModel updatedPark) throws ParkNotFoundException {
 
@@ -56,8 +48,5 @@ public class ParkService {
         parkRepository.save(existingPark);
     }
 
-//    public List<CarModel> listCarsByParkId(int parkId){
-//        return parkRepository.listByParkId(parkId);
-//    }
 }
 

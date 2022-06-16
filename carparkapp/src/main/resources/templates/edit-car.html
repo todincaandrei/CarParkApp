@@ -38,7 +38,7 @@
 
     <form method="post" th:action="@{/edit-new-car}" th:object="${car}">
 
-        <input type="hidden" th:value="*{id}">
+        <input type="hidden" id="id" name="id" th:value="*{id}">
 
         <label for="brand">Brand:</label><br>
         <input type="text" id="brand" name="brand" th:field="*{brand}"><br>

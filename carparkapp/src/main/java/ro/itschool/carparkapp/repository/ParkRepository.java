@@ -12,6 +12,5 @@ import java.util.List;
 @Repository
 public interface ParkRepository extends JpaRepository<ParkModel, Integer> {
 
-//    @Query(value = "SELECT * FROM carparkapp.cars WHERE park_id LIKE :%param%", nativeQuery = true)
-//    List<CarModel> listByParkId(@Param("param") int param);
+
 }

@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import ro.itschool.carparkapp.entity.CarModel;
 import ro.itschool.carparkapp.entity.ParkModel;
 import ro.itschool.carparkapp.service.CarService;
 import ro.itschool.carparkapp.service.ParkService;
@@ -23,8 +22,6 @@ public class ParkController {
     @Autowired
     private CarService carService;
 
-
-
     @GetMapping("view-parks")
     private String viewPark(Model myModel) {
         List<ParkModel> parkModelsList = parkService.getPark();
@@ -34,7 +31,6 @@ public class ParkController {
 
     @GetMapping("add-park")
     public String addParkPage(Model model) {
-
 
         model.addAttribute("park", new ParkModel());
 
@@ -50,16 +46,11 @@ public class ParkController {
     @GetMapping("edit-parks-page/{parkId}")
     public String editParkPage(@PathVariable("parkId") int parkId, Model model) throws ParkNotFoundException {
 
-
         ParkModel parkModel = parkService.getParkById(parkId);
-
-
         model.addAttribute("park", parkModel);
-
 
         return "edit-park";
     }
-
 
     @PostMapping("edit-parks")
     public String editParks(ParkModel parkModel) throws ParkNotFoundException {
@@ -67,20 +58,9 @@ public class ParkController {
         return "redirect:/view-parks";
     }
 
-
     @GetMapping("delete-park/{id}")
-    public String deleteDepartment(@PathVariable("id") int parkId){
+    public String deleteDepartment(@PathVariable("id") int parkId) {
         parkService.removePark(parkId);
         return "redirect:/view-parks";
     }
-
-
-//    @GetMapping("list-park/{id}")
-//    public String listByParkId( @PathVariable("id") int parkId,CarModel carModel, Model model) {
-//
-//            List<CarModel> list = parkService.listCarsByParkId(parkId);
-//            model.addAttribute("cars", list);
-//
-//        return "parks";
-//    }
 }
